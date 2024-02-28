@@ -1,6 +1,6 @@
 global _start
 
-section .text:
+section .text
 _start:
 	mov eax, 0x04
 	mov ebx, 0x01
@@ -13,8 +13,8 @@ _start:
 	int 0x80
 
 
-section .rodata:
-	msg: db "helloworld=DD", 0xA
-	msgLen equ $ - msg ; $=address of curr instruct
+section .rodata
+	msg: db "helloworld!", 0x0A
+	msgLen equ $-msg ; $=address of curr instruct
 
 

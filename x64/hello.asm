@@ -1,20 +1,19 @@
-section .text:
-	global _start
+global _start
 
+section .text
 _start:
-	;align 16
-	mov rax, 0x01
-	mov rdi, 0x01
+	mov rax, 0x1
+	mov rdi, 0x1
 	mov rsi, msg
 	mov rdx, msgLen
 	syscall
 
-	mov rax, 0x3c
-	mov rdi, 0x00
+	mov rax, 0x3C
+	xor rdi, rdi
 	syscall
 
+section .rodata
+	msg: db "helloworld", 0x0A
+	msgLen equ $-msg
 
 
-section .data:
-	msg: db "helloworld", 0xA
-	msgLen equ $ - msg
