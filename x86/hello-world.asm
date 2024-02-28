@@ -9,7 +9,7 @@ _start:
 	int 0x80
 
 	mov eax, 0x01
-	mov ebx, 0x00
+	xor ebx, ebx
 	int 0x80
 
 
